@@ -1,7 +1,10 @@
+# Crear .gitignore
+cat > .gitignore << 'EOF'
 # Archivos de configuración con datos sensibles
 config.php
 conexion.php
 database.php
+db_config.php
 .env
 
 # Carpetas de dependencias
@@ -20,18 +23,13 @@ desktop.ini
 *.swo
 *~
 
-# Logs y archivos temporales
+# Logs y temporales
 *.log
 tmp/
 temp/
 cache/
 
-# Archivos de base de datos
-*.sql
-*.sqlite
-*.db
-
 # Backups
 *.bak
-
 *.backup
+EOF
