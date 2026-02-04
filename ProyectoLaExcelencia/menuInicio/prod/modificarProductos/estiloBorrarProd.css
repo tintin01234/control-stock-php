@@ -1,0 +1,220 @@
+/* ========================================
+   RESET BÁSICO
+   ======================================== */
+
+/* Elimina márgenes, rellenos y define box-sizing para todos los elementos */
+* {
+    margin: 0; /* Quita todos los márgenes predeterminados del navegador */
+    padding: 0; /* Quita todos los rellenos predeterminados del navegador */
+    box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho/alto total */
+}
+
+/* ========================================
+   ESTILOS DEL BODY
+   ======================================== */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define la familia de fuentes del sitio */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradiente diagonal púrpura de fondo */
+    min-height: 100vh; /* Altura mínima del 100% de la ventana del navegador */
+    display: flex; /* Activa el modelo de caja flexible (flexbox) */
+    flex-direction: column; /* Organiza los elementos hijos en columna vertical */
+    align-items: center; /* Centra los elementos horizontalmente en el eje X */
+    justify-content: center; /* Centra los elementos verticalmente en el eje Y */
+    padding: 40px 20px; /* Relleno interno: 40px arriba/abajo, 20px izquierda/derecha */
+}
+
+/* ========================================
+   TÍTULO PRINCIPAL (H1)
+   ======================================== */
+
+h1 {
+    color: white; /* Color del texto en blanco */
+    font-size: 36px; /* Tamaño de fuente de 36px */
+    font-weight: 700; /* Grosor de fuente en negrita (700) */
+    text-align: center; /* Alinea el texto al centro */
+    margin-bottom: 20px; /* Espaciado inferior de 20px */
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra negra semi-transparente para dar profundidad */
+    letter-spacing: 0.5px; /* Espaciado entre letras de 0.5px */
+}
+
+/* ========================================
+   PÁRRAFO DE COMENTARIOS/MENSAJES
+   ======================================== */
+
+#comentario {
+    color: white; /* Color del texto en blanco por defecto */
+    font-size: 16px; /* Tamaño de fuente de 16px */
+    text-align: center; /* Texto centrado */
+    margin-bottom: 30px; /* Espaciado inferior de 30px */
+    min-height: 24px; /* Altura mínima para reservar espacio incluso vacío */
+    font-weight: 600; /* Grosor de fuente semi-negrita */
+    padding: 10px 20px; /* Relleno interno: 10px arriba/abajo, 20px izq/der */
+    border-radius: 8px; /* Bordes redondeados de 8px */
+    transition: all 0.3s ease; /* Transición suave de 0.3s para cambios de estilo */
+}
+
+/* Estilos cuando el comentario tiene color verde (mensaje de éxito) */
+#comentario[style*="color: green"],
+#comentario[style*="color:green"] {
+    background: rgba(72, 187, 120, 0.2); /* Fondo verde semi-transparente */
+    border: 2px solid rgba(72, 187, 120, 0.5); /* Borde verde semi-transparente de 2px */
+    color: #f0fff4 !important; /* Color verde muy claro forzado con !important */
+    box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3); /* Sombra verde para destacar el mensaje */
+    animation: slideInDown 0.5s ease-out; /* Animación de entrada desde arriba en 0.5s */
+}
+
+/* ========================================
+   CONTENEDOR DE INFORMACIÓN DEL PRODUCTO
+   ======================================== */
+
+/* Contenedor que muestra la información del producto a eliminar */
+.info-container {
+    background: rgba(255, 255, 255, 0.95); /* Fondo blanco casi opaco */
+    backdrop-filter: blur(15px); /* Efecto de desenfoque del fondo (glassmorphism) */
+    border-radius: 15px; /* Bordes redondeados de 15px */
+    padding: 30px 35px; /* Relleno interno: 30px arriba/abajo, 35px izq/der */
+    margin-bottom: 30px; /* Espaciado inferior de 30px */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra suave para dar profundidad */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde blanco semi-transparente de 1px */
+    max-width: 600px; /* Ancho máximo de 600px (más ancho para más información) */
+    width: 100%; /* Ocupa el 100% del ancho disponible hasta el máximo */
+    border-left: 5px solid #f56565; /* Borde izquierdo rojo de 5px para indicar precaución */
+}
+
+/* ========================================
+   TEXTO DE INFORMACIÓN
+   ======================================== */
+
+/* Estilo para los párrafos de información del producto */
+.info-text {
+    color: #2d3748; /* Color gris oscuro para el texto */
+    font-size: 16px; /* Tamaño de fuente de 16px */
+    line-height: 1.8; /* Altura de línea de 1.8 para mejor legibilidad */
+    margin-bottom: 12px; /* Espaciado inferior de 12px entre líneas */
+}
+
+/* Último párrafo sin margen inferior */
+.info-text:last-child {
+    margin-bottom: 0; /* Elimina el margen inferior del último elemento */
+}
+
+/* Estilo para el texto en negrita (strong) dentro de la información */
+.info-text strong {
+    color: #1a202c; /* Color gris muy oscuro para destacar las etiquetas */
+    font-weight: 600; /* Grosor de fuente semi-negrita */
+    display: inline-block; /* Permite aplicar estilos de bloque inline */
+    min-width: 180px; /* Ancho mínimo para alinear visualmente los valores */
+}
+
+/* ========================================
+   FORMULARIO
+   ======================================== */
+
+/* Contenedor del formulario */
+form {
+    width: 100%; /* Ocupa el 100% del ancho disponible */
+    max-width: 600px; /* Ancho máximo de 600px */
+    margin-bottom: 20px; /* Espaciado inferior de 20px */
+}
+
+/* ========================================
+   BOTÓN DE CONFIRMAR ELIMINACIÓN
+   ======================================== */
+
+#btnBorrar {
+    width: 100%; /* Ocupa el 100% del ancho del formulario */
+    padding: 16px 30px; /* Relleno interno: 16px arriba/abajo, 30px izq/der */
+    background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%); /* Gradiente rojo diagonal */
+    border: none; /* Sin borde */
+    border-radius: 12px; /* Bordes redondeados de 12px */
+    color: white; /* Color del texto en blanco */
+    font-size: 16px; /* Tamaño de fuente de 16px */
+    font-weight: 600; /* Grosor de fuente semi-negrita */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras de 1px */
+    cursor: pointer; /* Cambia el cursor a manita al pasar sobre el botón */
+    transition: all 0.3s ease; /* Transición suave de 0.3s para todos los cambios */
+    position: relative; /* Posicionamiento relativo para el pseudo-elemento */
+    overflow: hidden; /* Oculta contenido que se salga del botón */
+    box-shadow: 0 6px 20px rgba(245, 101, 101, 0.4); /* Sombra roja para enfatizar peligro */
+}
+
+/* Pseudo-elemento para crear el efecto de brillo deslizante */
+#btnBorrar::before {
+    content: ''; /* Crea un pseudo-elemento vacío */
+    position: absolute; /* Posicionamiento absoluto dentro del botón */
+    top: 0; /* Alineado al borde superior */
+    left: -100%; /* Comienza fuera del botón por la izquierda */
+    width: 100%; /* Ancho del 100% */
+    height: 100%; /* Alto del 100% */
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent); /* Gradiente horizontal de brillo */
+    transition: left 0.5s; /* Transición del desplazamiento en 0.5 segundos */
+}
+
+/* Activa el efecto de brillo al pasar el mouse */
+#btnBorrar:hover::before {
+    left: 100%; /* Mueve el brillo de izquierda a derecha completamente */
+}
+
+/* Efecto hover del botón */
+#btnBorrar:hover {
+    transform: translateY(-3px); /* Eleva el botón 3px hacia arriba */
+    box-shadow: 0 12px 35px rgba(245, 101, 101, 0.5); /* Aumenta la sombra roja */
+    background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%); /* Gradiente rojo más oscuro */
+}
+
+/* Efecto active (al hacer clic en el botón) */
+#btnBorrar:active {
+    transform: translateY(-1px); /* Reduce la elevación a solo 1px */
+}
+
+/* ========================================
+   ENLACE "CANCELAR Y VOLVER"
+   ======================================== */
+
+a {
+    display: inline-block; /* Permite aplicar padding y margin como bloque */
+    margin-top: 20px; /* Espaciado superior de 20px */
+    padding: 12px 25px; /* Relleno interno: 12px arriba/abajo, 25px izq/der */
+    color: white; /* Color del texto en blanco */
+    text-decoration: none; /* Quita el subrayado predeterminado del enlace */
+    font-size: 16px; /* Tamaño de fuente de 16px */
+    font-weight: 600; /* Grosor de fuente semi-negrita */
+    background: rgba(255, 255, 255, 0.2); /* Fondo blanco semi-transparente */
+    border: 2px solid white; /* Borde blanco de 2px */
+    border-radius: 8px; /* Bordes redondeados de 8px */
+    transition: all 0.3s ease; /* Transición suave de 0.3s */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque del fondo */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    letter-spacing: 0.5px; /* Espaciado entre letras de 0.5px */
+}
+
+/* Efecto hover del enlace */
+a:hover {
+    background: white; /* Cambia el fondo a blanco sólido */
+    color: #667eea; /* Cambia el color del texto a púrpura */
+    transform: translateY(-2px); /* Eleva el enlace 2px hacia arriba */
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3); /* Añade sombra blanca */
+}
+
+/* Efecto active del enlace */
+a:active {
+    transform: translateY(0); /* Restablece la posición original al hacer clic */
+}
+
+/* ========================================
+   ANIMACIONES
+   ======================================== */
+
+/* Animación de entrada desde arriba para mensajes */
+@keyframes slideInDown {
+    from {
+        opacity: 0; /* Comienza invisible (opacidad 0) */
+        transform: translateY(-20px); /* Comienza 20px más arriba de su posición final */
+    }
+    to {
+        opacity: 1; /* Termina completamente visible (opacidad 1) */
+        transform: translateY(0); /* Termina en su posición normal */
+    }
+}
