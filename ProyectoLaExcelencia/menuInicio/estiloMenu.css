@@ -1,0 +1,139 @@
+/* ========================================
+   RESET BÁSICO
+   ======================================== */
+
+/* Elimina márgenes, rellenos y define box-sizing para todos los elementos */
+* {
+    margin: 0; /* Quita todos los márgenes predeterminados */
+    padding: 0; /* Quita todos los rellenos predeterminados */
+    box-sizing: border-box; /* Incluye padding y border en el ancho/alto total */
+}
+
+/* ========================================
+   ESTILOS DEL BODY
+   ======================================== */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define la fuente principal */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradiente púrpura de fondo */
+    min-height: 100vh; /* Altura mínima de 100% del viewport */
+    display: flex; /* Activa flexbox para centrar contenido */
+    flex-direction: column; /* Organiza elementos en columna vertical */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    padding: 20px; /* Espaciado interno de 20px en todos los lados */
+}
+
+/* ========================================
+   ESTILOS DE LOS FORMULARIOS
+   ======================================== */
+
+/* Estiliza cada formulario individual */
+form {
+    width: 100%; /* Ocupa el 100% del ancho del contenedor padre */
+    max-width: 500px; /* Ancho máximo de 500px */
+    margin-bottom: 20px; /* Espaciado inferior de 20px entre formularios */
+}
+
+/* ========================================
+   ESTILOS DE LOS BOTONES
+   ======================================== */
+
+/* Estilos base para todos los botones de submit */
+input[type="submit"] {
+    width: 100%; /* Botón ocupa todo el ancho disponible */
+    padding: 18px 30px; /* Relleno interno: 18px arriba/abajo, 30px izq/der */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradiente púrpura */
+    border: none; /* Sin borde */
+    border-radius: 12px; /* Bordes redondeados de 12px */
+    color: white; /* Texto en color blanco */
+    font-size: 18px; /* Tamaño de fuente de 18px */
+    font-weight: 600; /* Grosor de fuente semi-negrita */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras de 1px */
+    cursor: pointer; /* Cambia el cursor a manita al pasar sobre el botón */
+    transition: all 0.3s ease; /* Transición suave de 0.3s para todas las propiedades */
+    position: relative; /* Posicionamiento relativo para el pseudo-elemento */
+    overflow: hidden; /* Oculta contenido que se salga del botón */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    font-family: inherit; /* Hereda la fuente del body */
+}
+
+/* Efecto de brillo que se desliza al pasar el mouse */
+input[type="submit"]::before {
+    content: ''; /* Crea un pseudo-elemento vacío */
+    position: absolute; /* Posicionamiento absoluto dentro del botón */
+    top: 0; /* Alineado al borde superior */
+    left: -100%; /* Inicia fuera del botón por la izquierda */
+    width: 100%; /* Ancho del 100% */
+    height: 100%; /* Alto del 100% */
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent); /* Gradiente de brillo */
+    transition: left 0.6s; /* Transición del desplazamiento en 0.6s */
+}
+
+/* Activa el efecto de brillo al pasar el mouse */
+input[type="submit"]:hover::before {
+    left: 100%; /* Mueve el brillo hacia la derecha */
+}
+
+/* Efecto hover (al pasar el mouse sobre el botón) */
+input[type="submit"]:hover {
+    transform: translateY(-4px); /* Eleva el botón 4px hacia arriba */
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5); /* Aumenta y cambia color de la sombra */
+}
+
+/* Efecto active (al hacer clic en el botón) */
+input[type="submit"]:active {
+    transform: translateY(-1px); /* Reduce la elevación a 1px */
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4); /* Reduce ligeramente la sombra */
+}
+
+/* ========================================
+   ESTILOS ESPECÍFICOS POR ID
+   ======================================== */
+
+/* Botón de Gestionar Proveedores - Color azul */
+#btnProv {
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%); /* Gradiente azul */
+}
+
+#btnProv:hover {
+    box-shadow: 0 15px 35px rgba(66, 153, 225, 0.5); /* Sombra azul al hover */
+}
+
+/* Botón de Gestionar Productos - Color verde */
+#btnProd {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%); /* Gradiente verde */
+}
+
+#btnProd:hover {
+    box-shadow: 0 15px 35px rgba(72, 187, 120, 0.5); /* Sombra verde al hover */
+}
+
+/* Botón de Gestionar Ventas - Color naranja */
+#btnVentas {
+    background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%); /* Gradiente naranja */
+}
+
+#btnVentas:hover {
+    box-shadow: 0 15px 35px rgba(237, 137, 54, 0.5); /* Sombra naranja al hover */
+}
+
+/* Botón de Ver Estadísticas - Color morado oscuro */
+#btnEst {
+    background: linear-gradient(135deg, #9f7aea 0%, #805ad5 100%); /* Gradiente morado */
+}
+
+#btnEst:hover {
+    box-shadow: 0 15px 35px rgba(159, 122, 234, 0.5); /* Sombra morada al hover */
+}
+
+/* Botón de Salir - Color rojo */
+#btnSalir {
+    background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%); /* Gradiente rojo */
+    margin-top: 20px; /* Espaciado superior adicional de 20px */
+}
+
+#btnSalir:hover {
+    box-shadow: 0 15px 35px rgba(245, 101, 101, 0.5); /* Sombra roja al hover */
+}

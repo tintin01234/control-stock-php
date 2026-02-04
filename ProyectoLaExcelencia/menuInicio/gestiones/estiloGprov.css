@@ -1,0 +1,140 @@
+/* ========================================
+   RESET BÁSICO
+   ======================================== */
+
+/* Elimina márgenes, rellenos y define box-sizing para todos los elementos */
+* {
+    margin: 0; /* Quita todos los márgenes predeterminados */
+    padding: 0; /* Quita todos los rellenos predeterminados */
+    box-sizing: border-box; /* Incluye padding y border en el ancho/alto total del elemento */
+}
+
+/* ========================================
+   ESTILOS DEL BODY
+   ======================================== */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define la familia de fuentes */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradiente púrpura diagonal de fondo */
+    min-height: 100vh; /* Altura mínima del 100% del viewport (pantalla completa) */
+    display: flex; /* Activa el modelo flexbox */
+    flex-direction: column; /* Organiza los elementos hijos en columna vertical */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    padding: 40px 20px; /* Relleno: 40px arriba/abajo, 20px izquierda/derecha */
+}
+
+/* ========================================
+   TÍTULO PRINCIPAL (H1)
+   ======================================== */
+
+h1 {
+    color: white; /* Color de texto blanco */
+    font-size: 32px; /* Tamaño de fuente de 32px */
+    font-weight: 700; /* Grosor de fuente en negrita */
+    text-align: center; /* Alinea el texto al centro */
+    margin-bottom: 40px; /* Espaciado inferior de 40px */
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra del texto para dar profundidad */
+    max-width: 800px; /* Ancho máximo de 800px */
+    line-height: 1.4; /* Altura de línea para mejor legibilidad */
+}
+
+/* ========================================
+   ESTILOS DE LOS FORMULARIOS
+   ======================================== */
+
+/* Estiliza cada formulario individual */
+form {
+    width: 100%; /* Ocupa el 100% del ancho disponible */
+    max-width: 450px; /* Ancho máximo de 450px */
+    margin-bottom: 20px; /* Espaciado inferior de 20px entre formularios */
+}
+
+/* ========================================
+   ESTILOS DE LOS BOTONES
+   ======================================== */
+
+/* Estilos base para el botón con id="btn" */
+#btn {
+    width: 100%; /* El botón ocupa todo el ancho del formulario */
+    padding: 18px 35px; /* Relleno interno: 18px arriba/abajo, 35px izq/der */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradiente púrpura diagonal */
+    border: none; /* Sin borde */
+    border-radius: 12px; /* Bordes redondeados de 12px */
+    color: white; /* Color del texto en blanco */
+    font-size: 18px; /* Tamaño de fuente de 18px */
+    font-weight: 600; /* Grosor de fuente semi-negrita */
+    text-transform: uppercase; /* Convierte todo el texto a mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras de 1px */
+    cursor: pointer; /* Cambia el cursor a una manita al pasar sobre el botón */
+    transition: all 0.3s ease; /* Transición suave de 0.3 segundos para todas las propiedades */
+    position: relative; /* Posicionamiento relativo para elementos pseudo */
+    overflow: hidden; /* Oculta cualquier contenido que se salga del botón */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra para dar efecto de profundidad */
+    font-family: inherit; /* Hereda la fuente del elemento padre (body) */
+}
+
+/* Pseudo-elemento para crear efecto de brillo deslizante */
+#btn::before {
+    content: ''; /* Crea un pseudo-elemento vacío */
+    position: absolute; /* Posicionamiento absoluto dentro del botón */
+    top: 0; /* Alineado al borde superior */
+    left: -100%; /* Comienza fuera del botón por la izquierda */
+    width: 100%; /* Ancho del 100% del botón */
+    height: 100%; /* Alto del 100% del botón */
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent); /* Gradiente horizontal de brillo */
+    transition: left 0.6s; /* Transición del desplazamiento en 0.6 segundos */
+}
+
+/* Activa el efecto de brillo al pasar el mouse */
+#btn:hover::before {
+    left: 100%; /* Mueve el brillo de izquierda a derecha */
+}
+
+/* Efecto hover (al pasar el mouse sobre el botón) */
+#btn:hover {
+    transform: translateY(-4px); /* Eleva el botón 4px hacia arriba */
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5); /* Aumenta el tamaño y cambia el color de la sombra */
+}
+
+/* Efecto active (al hacer clic en el botón) */
+#btn:active {
+    transform: translateY(-1px); /* Reduce la elevación a solo 1px */
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4); /* Reduce ligeramente la sombra */
+}
+
+/* ========================================
+   ESTILOS DEL ENLACE DE REGRESO
+   ======================================== */
+
+/* Estiliza el enlace "Volver al menú" */
+a {
+    display: inline-block; /* Permite aplicar padding y margin */
+    margin-top: 30px; /* Espaciado superior de 30px */
+    padding: 12px 25px; /* Relleno interno: 12px arriba/abajo, 25px izq/der */
+    color: white; /* Color del texto en blanco */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    font-size: 16px; /* Tamaño de fuente de 16px */
+    font-weight: 600; /* Grosor de fuente semi-negrita */
+    background: rgba(255, 255, 255, 0.2); /* Fondo blanco semi-transparente */
+    border: 2px solid white; /* Borde blanco de 2px */
+    border-radius: 8px; /* Bordes redondeados de 8px */
+    transition: all 0.3s ease; /* Transición suave de 0.3 segundos */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque del fondo */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    letter-spacing: 0.5px; /* Espaciado entre letras de 0.5px */
+}
+
+/* Efecto hover del enlace */
+a:hover {
+    background: white; /* Cambia el fondo a blanco sólido */
+    color: #667eea; /* Cambia el color del texto a púrpura */
+    transform: translateY(-2px); /* Eleva el enlace 2px hacia arriba */
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3); /* Añade sombra blanca */
+}
+
+/* Efecto active del enlace */
+a:active {
+    transform: translateY(0); /* Restablece la posición original */
+}
+
