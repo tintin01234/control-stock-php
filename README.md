@@ -21,7 +21,7 @@ Aplicación web para gestión de inventario desarrollada con PHP y MySQL.
 
 1. Clona el repositorio:
 ```bash
-git clone https://github.com/tuusuario/control-stock-php.git
+git clone https://github.com/tintin01234/control-stock-php.git
 ```
 
 2. Importa la base de datos:
