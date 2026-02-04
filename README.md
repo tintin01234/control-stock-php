@@ -17,10 +17,6 @@ Aplicación web para gestión de inventario desarrollada con PHP y MySQL.
 - **Base de Datos:** MySQL
 - **Servidor:** Apache (XAMPP/WAMP)
 
-## 📸 Capturas de Pantalla
-
-[Aquí agregarías imágenes de tu proyecto]
-
 ## Instalación
 
 1. Clona el repositorio:
